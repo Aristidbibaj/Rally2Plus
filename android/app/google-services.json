@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "390190233089",
+    "firebase_url": "https://rally2plus-ab17892-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "rally2plus-ab17892",
+    "storage_bucket": "rally2plus-ab17892.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390190233089:android:0b877fb8792a806a087200",
+        "android_client_info": {
+          "package_name": "it.andregamba.rally2plus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390190233089-65ipe9nlqnigkqhgj42e1dhj446eovgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJuTvEAmoUWOI4dUXfSMe5sRoxL9Ded4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390190233089-65ipe9nlqnigkqhgj42e1dhj446eovgr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "390190233089-7s20vc1v0fb7ab4e9eoltm0v2ub6io61.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "it.andregamba"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

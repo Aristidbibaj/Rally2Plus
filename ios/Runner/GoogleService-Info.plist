@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>390190233089-8jbm0msogdl7oljedanpeemmvkbc4qvo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.390190233089-8jbm0msogdl7oljedanpeemmvkbc4qvo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDTv_n2Q799osN0m-xiMoE3-012C-69QHs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>390190233089</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>it.andregamba.rally2plus</string>
+	<key>PROJECT_ID</key>
+	<string>rally2plus-ab17892</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rally2plus-ab17892.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:390190233089:ios:3091aa1ec52887f7087200</string>
+	<key>DATABASE_URL</key>
+	<string>https://rally2plus-ab17892-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
