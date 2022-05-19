@@ -13,12 +13,10 @@ class LocalStorage {
   }
 
   static String getLingua() {
-    if (!_init) init();
     return instance.getString('lingua') ?? 'it';
   }
 
   static bool isIta() {
-    if (!_init) init();
     if (getLingua().compareTo('it') == 0) return true;
     return false;
   }

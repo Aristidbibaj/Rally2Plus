@@ -1,33 +1,67 @@
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/material.dart';
 
-class CategoriaHome {
-  late String nomeIt;
-  late String nomeEn;
+class HomeCategory {
+  late Map<String, String> name;
+  late String img;
 
-  CategoriaHome({
-    required this.nomeEn,
-    required this.nomeIt,
+  HomeCategory({
+    required this.name,
+    required this.img,
   });
 
-  factory CategoriaHome.fromRTDB(Map<String, dynamic> json) {
-    return CategoriaHome(
-    nomeIt : json['it'] ?? 'wrc',
-    nomeEn : json['en'] ?? 'wrc',
+  factory HomeCategory.fromRTDB(Map<String, dynamic> json) {
+    return HomeCategory(
+      name: Map<String, String>.from(json['name']),
+      img: json['img'],
     );
   }
 
-  CategoriaHome.fromDataSnapshot(DataSnapshot snapshot) {
+  HomeCategory.fromDataSnapshot(DataSnapshot snapshot) {
     (snapshot as Map<dynamic, dynamic>).forEach((key, value) {
-      nomeIt = value['it'];
-      nomeEn = value['en'];
+      name = Map<String, String>.from(value['name']);
+      img = value['img'];
     });
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  <String, dynamic>{};
-    data['it'] = nomeIt;
-    data['en'] = nomeEn;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['img'] = img;
+    return data;
+  }
+}
+
+class HomeCategoryHidden {
+  late Map<String, String> name;
+  late String img;
+  late bool visible;
+
+  HomeCategoryHidden({
+    required this.name,
+    required this.img,
+    required this.visible,
+  });
+
+  factory HomeCategoryHidden.fromRTDB(Map<String, dynamic> json) {
+    return HomeCategoryHidden(
+        name: Map<String, String>.from(json['name']),
+        img: json['img'],
+        visible: json['visible']);
+  }
+
+  HomeCategoryHidden.fromDataSnapshot(DataSnapshot snapshot) {
+    (snapshot as Map<dynamic, dynamic>).forEach((key, value) {
+      name = Map<String, String>.from(value['name']);
+      img = value['img'];
+      visible = value['visible'];
+    });
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['img'] = img;
+    data['visible'] = visible;
     return data;
   }
 }

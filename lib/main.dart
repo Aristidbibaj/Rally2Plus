@@ -1,14 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:rally2plus/controls/ui.dart';
-import 'package:rally2plus/views/home_screen_category.dart';
 import 'package:rally2plus/controls/local_storage.dart';
-
-import 'controls/database_services.dart';
-
-
-
+import 'package:rally2plus/controls/ui.dart';
+import 'package:rally2plus/views/main_screen.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,8 +16,7 @@ main() async {
 }
 
 class MyApp extends StatelessWidget {
-
-   MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -32,10 +26,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: kRed,
-        canvasColor: kBlack,
+        canvasColor: kWhite,
         shadowColor: kLightGrey,
       ),
-      home: HomeScreenCategory(),
+      home: MainScreen(),
     );
   }
 }
