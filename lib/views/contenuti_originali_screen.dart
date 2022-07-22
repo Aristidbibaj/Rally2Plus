@@ -222,7 +222,7 @@ class _OriginalContentsState extends State<OriginalContents>
                     enabled: _wasSearching,
                     autofocus: true,
                     decoration: InputDecoration(
-                      hintText: kCerca[LocalStorage.getLingua()],
+                      hintText: kSearch[LocalStorage.getLingua()],
                       contentPadding: EdgeInsets.all(8.0),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),

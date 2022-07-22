@@ -242,7 +242,7 @@ class _HomeScreenCategoryState extends State<HomeScreenCategory>
                             ),
                             Expanded(
                               child: Text(
-                                '${tempNews.title}',
+                                '${tempNews.title[LocalStorage.getLingua()]}',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.museoModerno(

@@ -26,7 +26,7 @@ class Rallys {
       required this.race_length,
       required this.nation_race});
 
-  Rallys.fromJson(Map<String, dynamic> json) {
+  Rallys.fromRTDB(Map<String, dynamic> json) {
     rally_flag = json['rally_flag'];
     rally_category = json['rally_category'];
     end_datetime = json['end_datetime'];

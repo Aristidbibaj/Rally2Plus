@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rally2plus/controls/database_services.dart';
+import 'package:rally2plus/controls/globals.dart';
 import 'package:rally2plus/controls/local_storage.dart';
 import 'package:rally2plus/controls/ui.dart';
 import 'package:rally2plus/views/main_screen.dart';
@@ -11,7 +13,7 @@ main() async {
   // get the prefs
   await LocalStorage.init();
   await Firebase.initializeApp();
-
+  DatabaseService();
   runApp(MyApp());
 }
 
@@ -22,13 +24,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rally 2 Plus',
+      title: KRally2Plus,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: kRed,
-        canvasColor: kWhite,
-        shadowColor: kLightGrey,
-      ),
+          primaryColor: kRed, canvasColor: kWhite, shadowColor: kLightGrey),
       home: MainScreen(),
     );
   }

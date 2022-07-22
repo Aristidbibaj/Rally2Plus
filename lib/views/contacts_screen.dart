@@ -5,7 +5,7 @@ import 'package:rally2plus/controls/database_services.dart';
 import 'package:rally2plus/controls/local_storage.dart';
 import 'package:rally2plus/controls/ui.dart';
 import 'package:rally2plus/models/contacts.dart';
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 class ContactsScreen extends StatelessWidget {
   late Contacts contacts;
@@ -20,7 +20,7 @@ class ContactsScreen extends StatelessWidget {
   }
 
   void _launchUrl() async {
-    if (!await launchUrl(_url)) throw 'Could not launch $_url';
+    //if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 
   @override

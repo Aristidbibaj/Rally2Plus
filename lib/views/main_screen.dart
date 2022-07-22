@@ -1,23 +1,21 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rally2plus/controls/database_services.dart';
 import 'package:rally2plus/controls/globals.dart';
 import 'package:rally2plus/controls/local_storage.dart';
 import 'package:rally2plus/controls/ui.dart';
+import 'package:rally2plus/models/category_home.dart';
+import 'package:rally2plus/models/contacts.dart';
+import 'package:rally2plus/models/drivers.dart';
 import 'package:rally2plus/models/news.dart';
+import 'package:rally2plus/models/races.dart';
+import 'package:rally2plus/models/rallys.dart';
 import 'package:rally2plus/views/bernacca_screen.dart';
 import 'package:rally2plus/views/contacts_screen.dart';
 import 'package:rally2plus/views/contenuti_originali_screen.dart';
-
-import '../controls/database_services.dart';
-import '../models/category_home.dart';
-import '../models/contacts.dart';
-import '../models/drivers.dart';
-import '../models/races.dart';
-import '../models/rallys.dart';
-import 'home_category_screen.dart';
+import 'package:rally2plus/views/home_category_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({
@@ -43,9 +41,6 @@ class _MainScreenState extends State<MainScreen> {
   int selectedPage = 0;
   late String selectedLanguage;
 
-  //late String appLanguage;
-  //late bool isIta;
-
   @override
   void initState() {
     super.initState();
@@ -53,9 +48,9 @@ class _MainScreenState extends State<MainScreen> {
     selectedLanguage = LocalStorage.getLingua();
     databaseService = DatabaseService();
     contactsDatabase = Contacts(
-        collaborators: '${contactsDefault['collaboratori']}',
-        developers: '${contactsDefault['sviluppatori']}',
-        rally2plus_web_link: '${contactsDefault['linkinstagramwrc']}');
+        collaborators: '${kContactsDefault['collaboratori']}',
+        developers: '${kContactsDefault['sviluppatori']}',
+        rally2plus_web_link: '${kContactsDefault['linkinstagramwrc']}');
     _initDB();
   }
 

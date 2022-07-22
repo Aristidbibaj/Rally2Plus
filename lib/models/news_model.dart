@@ -7,7 +7,7 @@ import 'package:rally2plus/models/news.dart';
 class NewsModel extends ChangeNotifier {
   News? _notizia;
 
-  static const NEWS_DB_PATH = 'notizie';
+  static const NEWS_DB_PATH = 'news';
   final _db = FirebaseDatabase.instance.ref(NEWS_DB_PATH);
   late StreamSubscription _notizieStream;
 
@@ -23,6 +23,7 @@ class NewsModel extends ChangeNotifier {
     _notizieStream = _db.child(NEWS_DB_PATH).onValue.listen((event) {
       final allNews = event.snapshot.value as List;
       for (var value in allNews) {
+        print(value);
         _newsList.add(News.fromRTDB(Map.from(value)));
       }
       notifyListeners();

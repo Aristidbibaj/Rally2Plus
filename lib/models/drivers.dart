@@ -24,7 +24,7 @@ class Drivers {
       required this.number,
       required this.team});
 
-  Drivers.fromJson(Map<String, dynamic> json) {
+  Drivers.fromRTDB(Map<String, dynamic> json) {
     driver_flag = json['driver_flag'];
     driver_category = json['driver_category'];
     classe = json['classe'];
@@ -32,7 +32,7 @@ class Drivers {
     m = json['m'];
     driver_car = json['driver_car'];
     navigator = json['navigator'];
-    driver_name = json['nome'];
+    driver_name = json['driver_name'];
     number = json['number'];
     team = json['team'];
   }
@@ -46,7 +46,7 @@ class Drivers {
       m = value['m'];
       driver_car = value['driver_car'];
       navigator = value['navigator'];
-      driver_name = value['nome'];
+      driver_name = value['driver_name'];
       number = value['number'];
       team = value['team'];
     });
@@ -61,7 +61,7 @@ class Drivers {
     data['m'] = m;
     data['driver_car'] = driver_car;
     data['navigator'] = navigator;
-    data['nome'] = driver_name;
+    data['driver_name'] = driver_name;
     data['number'] = number;
     data['team'] = team;
     return data;

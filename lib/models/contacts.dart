@@ -13,10 +13,12 @@ class Contacts {
     required this.rally2plus_web_link,
   });
 
-  Contacts.fromJson(Map<String, dynamic> json) {
-    developers = json['developers'];
-    collaborators = json['collaborators'];
-    rally2plus_web_link = json['rally2plus_web_link'];
+  Contacts.fromRTDB(Map<String, dynamic> json) {
+    (json as Map<String, dynamic>).forEach((key, value) {
+      developers = json['developers'];
+      collaborators = json['collaborators'];
+      rally2plus_web_link = json['rally2plus_web_link'];
+    });
   }
 
   Contacts.fromDataSnapshot(DataSnapshot snapshot) {

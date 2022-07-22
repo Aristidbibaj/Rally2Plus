@@ -18,11 +18,11 @@ class Teams {
       required this.teams_id,
       required this.teams_name});
 
-  Teams.fromJson(Map<String, dynamic> json) {
+  Teams.fromRTDB(Map<String, dynamic> json) {
     teams_flag = json['teams_flag'];
     teams_category = json['teams_category'];
     classe = json['classe'];
-    id_drivers = json['id_drivers'];
+    id_drivers = List<int>.from(json['id_drivers']);
     teams_car = json['teams_car'];
     teams_id = json['teams_id'];
     teams_name = json['teams_name'];
@@ -33,7 +33,7 @@ class Teams {
       teams_flag = value['teams_flag'];
       teams_category = value['teams_category'];
       classe = value['classe'];
-      id_drivers = value['id_drivers'];
+      id_drivers = List<int>.from(value['id_drivers']);
       teams_car = value['teams_car'];
       teams_id = value['teams_id'];
       teams_name = value['teams_name'];

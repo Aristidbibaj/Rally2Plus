@@ -11,12 +11,28 @@ class Standings {
     required this.wrc2_teams,
   });
 
-  factory Standings.fromJson(Map<String, dynamic> json) {
+  factory Standings.fromRTDB(var json) {
+    List<Map<String, dynamic>> tmp_wrc_drivers = [];
+    for (var tmp_map in json[0]) {
+      tmp_wrc_drivers.add(Map.from(tmp_map));
+    }
+    List<Map<String, dynamic>> tmp_wrc_manufactures = [];
+    for (var tmp_map in json[1]) {
+      tmp_wrc_manufactures.add(Map.from(tmp_map));
+    }
+    List<Map<String, dynamic>> tmp_wrc2_drivers = [];
+    for (var tmp_map in json[2]) {
+      tmp_wrc2_drivers.add(Map.from(tmp_map));
+    }
+    List<Map<String, dynamic>> tmp_wrc2_teams = [];
+    for (var tmp_map in json[3]) {
+      tmp_wrc2_teams.add(Map.from(tmp_map));
+    }
     return Standings(
-      wrc_drivers: json[0] as List<Map<String, dynamic>>,
-      wrc_manufactures: json[1] as List<Map<String, dynamic>>,
-      wrc2_drivers: json[2] as List<Map<String, dynamic>>,
-      wrc2_teams: json[3] as List<Map<String, dynamic>>,
+      wrc_drivers: tmp_wrc_drivers,
+      wrc_manufactures: tmp_wrc_manufactures,
+      wrc2_drivers: tmp_wrc2_drivers,
+      wrc2_teams: tmp_wrc2_teams,
     );
   }
 

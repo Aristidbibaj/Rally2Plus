@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -30,7 +29,6 @@ class _NewsListScreenState extends State<NewsListScreen>
   late DatabaseService databaseService;
   List<News> newsDatabase = [];
   List<News> newsDatabaseFiltered = [];
-  final ScrollController _list_view_controller = ScrollController();
   final searchController = TextEditingController();
 
   DateTime _currentDate = DateTime.now();
@@ -48,7 +46,6 @@ class _NewsListScreenState extends State<NewsListScreen>
 
   @override
   Widget build(BuildContext context) {
-    log('category name:  ${widget.categoryName}');
     double kWidth = MediaQuery.of(context).size.width;
     _filterDB();
     return Scaffold(
@@ -247,7 +244,7 @@ class _NewsListScreenState extends State<NewsListScreen>
                             enabled: _wasSearching,
                             autofocus: true,
                             decoration: InputDecoration(
-                              hintText: kCerca[LocalStorage.getLingua()],
+                              hintText: kSearch[LocalStorage.getLingua()],
                               contentPadding: EdgeInsets.all(8.0),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius:
@@ -279,25 +276,27 @@ class _NewsListScreenState extends State<NewsListScreen>
                   ),
                   Expanded(
                     child: newsDatabaseFiltered.isNotEmpty
-                        ? ListView.builder(
+                        ? ListView(
                             padding: EdgeInsets.zero,
                             shrinkWrap: true,
-                            controller: _list_view_controller,
-                            itemCount: newsDatabaseFiltered.length,
-                            itemBuilder: (_, index) {
-                              return MaterialButton(
-                                padding: EdgeInsets.zero,
-                                child: NewsListWidget(
-                                    newsToView: newsDatabaseFiltered[index]),
-                                onPressed: () {
-                                  Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) {
-                                    return NewsScreen(
-                                        newsDatabaseFiltered[index]);
-                                  }));
-                                },
-                              );
-                            })
+                            children: [
+                              for (int index = 0;
+                                  index < newsDatabaseFiltered.length;
+                                  index++)
+                                MaterialButton(
+                                  padding: EdgeInsets.zero,
+                                  child: NewsListWidget(
+                                      newsToView: newsDatabaseFiltered[index]),
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) {
+                                      return NewsScreen(
+                                          newsDatabaseFiltered[index]);
+                                    }));
+                                  },
+                                ),
+                            ],
+                          )
                         : const Center(
                             child: Text('No News!'),
                           ),

@@ -183,7 +183,7 @@ class _BernaccaPageState extends State<BernaccaPage>
                               enabled: _wasSearching,
                               autofocus: true,
                               decoration: InputDecoration(
-                                hintText: kCerca[LocalStorage.getLingua()],
+                                hintText: kSearch[LocalStorage.getLingua()],
                                 contentPadding: EdgeInsets.all(8.0),
                                 enabledBorder: const OutlineInputBorder(
                                     borderRadius:
@@ -217,8 +217,11 @@ class _BernaccaPageState extends State<BernaccaPage>
                   ),
                 ),
                 for (News notiz in newsDatabaseFiltered)
-                  NewsListWidget(
-                    newsToView: notiz,
+                  MaterialButton(
+                    onPressed: () {},
+                    child: NewsListWidget(
+                      newsToView: notiz,
+                    ),
                   ),
               ],
             ),
